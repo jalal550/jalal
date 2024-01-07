@@ -2,7 +2,7 @@ This portfolio showcases my skills, projects, and experiences as a Full Stack De
 
 ## Features
 
-- **About Me:** Brief introduction and summary of my wokrs experiences.
+- **About Me:** Brief introduction and summary of my works experiences.
 - **Projects:** Highlights of some of my notable projects with descriptions and links.
 - **Resume:** Education and Works Experience.
 - **Skills:** List of skills and technologies I'm proficient in.
