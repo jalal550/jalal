@@ -1,779 +1,474 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jalal Miah - Portfolio</title>
+    <title>Jalal Miah - Professional Resume & Portfolio</title>
     <link rel="icon" href="assets/img/logo_fav.png" type="image/x-icon">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!--    meta tags-->
-
-    <meta property="og:title" content="Jalal Miah - Portfolio">
-    <meta property="og:description" content="Explore the portfolio of Jalal Miah">
-    <meta property="og:url" content="https://www.yourportfolio.com">
-    <meta property="og:image" content="assets/img/jalal.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
-<!--meta tags end-->
-
+    <!-- Custom Utility Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top py-3">
-    <div class="container">
-        <div class="navbar-brand-container">
-            <a class="navbar-brand" href="#about">
-                Jalal Miah
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+<!-- Top Minimal Navbar -->
+<nav class="bg-white/80 backdrop-blur-md text-slate-900 fixed top-0 left-0 w-full z-50 border-b border-slate-100 shadow-sm py-3">
+    <div class="max-w-5xl mx-auto px-6 flex justify-between items-center">
+        <div>
+            <a class="text-lg font-bold tracking-tight text-slate-900 hover:text-indigo-600 transition" href="#about">
+                jalal.miah<span class="text-indigo-600">_</span>
             </a>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <!-- Mobile Menu Trigger -->
+        <button id="menu-toggle" class="md:hidden text-slate-600 hover:text-slate-900 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#resume">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#blog">Blog</a>
-                </li>
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#testimonials">Testimonials</a>-->
-<!--                </li>-->
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
+        <!-- Horizontal Desktop Links -->
+        <div id="nav-menu" class="hidden md:flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-8 absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent border-b md:border-none border-slate-100 p-6 md:p-0 font-medium text-sm text-slate-600">
+            <a class="hover:text-indigo-600 transition" href="#about">About</a>
+            <a class="hover:text-indigo-600 transition" href="#resume">Experience</a>
+            <a class="hover:text-indigo-600 transition" href="#skills">Skills</a>
+            <a class="hover:text-indigo-600 transition" href="#portfolio">Projects</a>
+            <a class="hover:text-indigo-600 transition" href="#blog">Articles</a>
+            <a class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-1.5 rounded-md transition text-xs shadow-sm" href="#contact">Contact</a>
         </div>
     </div>
 </nav>
-<!-- About Section -->
-<!-- About Section with Two-Color Gradient Background -->
-<!--<section id="about" class="py-5" style="margin-top: 5rem;">-->
-<section id="about" class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 my-auto mb-3">
-                <h2 class="display-4">Hello, <br>I'm Jalal Miah</h2>
-                <h4 style="color: #0c2171;">Web Developer</h4>
-                <p class="lead">I am a passionate backend developer with a strong commitment to crafting efficient and scalable solutions. My expertise lies in turning complex problems into streamlined and maintainable code. Let's collaborate and build something extraordinary together!</p>
-                <div class="mt-4">
-                    <a href="#contact" class="btn btn-dark btn-lg btn-effect">Contact Me</a>
-                </div>
-            </div>
 
-            <div class="col-lg-5 my-auto">
-                <div class="text-center">
-                    <img src="assets/img/jalal.jpg" alt="Your Name" class="img-fluid rounded-circle mb-4" style="height: 350px; width: 350px;">
-                </div>
+<!-- Main Structured Container -->
+<main class="max-w-5xl mx-auto px-6 pt-28 pb-20 space-y-20">
+
+    <!-- Resume Header Section / Profile Overview -->
+    <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-b border-slate-200 pb-12">
+        <div class="md:col-span-8 space-y-4">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-1">Jalal Miah</h1>
+                <p class="text-lg font-semibold text-indigo-600 tracking-wide uppercase text-sm">Professional Backend & Full-Stack Engineer</p>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-justify max-w-2xl text-base">
+                I am a passionate backend developer with a strong commitment to crafting efficient and scalable solutions. My expertise lies in turning complex architectural problems into streamlined, robust, and highly maintainable code base systems. Let's collaborate to build something structurally clean and performance-optimized.
+            </p>
+            <div class="flex flex-wrap gap-4 text-xs font-medium text-slate-500 pt-2">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-indigo-500"></i> Bangladesh</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-envelope text-indigo-500"></i> jalal@example.com</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-globe text-indigo-500"></i> yourportfolio.com</span>
             </div>
         </div>
-    </div>
-</section>
-
-
-<!-- Portfolio Section -->
-<section id="portfolio" class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="display-4">Portfolio</h2>
-            <p class="lead">Explore a showcase of my recent projects and contributions:</p>
-
+        <div class="md:col-span-4 flex justify-start md:justify-end">
+            <img src="assets/img/jalal.jpg" alt="Jalal Miah" class="w-40 h-40 md:w-44 md:h-44 rounded-xl object-cover border border-slate-200 shadow-sm bg-slate-100">
         </div>
+    </section>
 
-
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="assets/img/talentstationery.png" class="card-img-top" alt="Talent Stationary BD">
-                    <div class="card-body">
-                        <h5 class="card-title">Talent Stationary BD</h5>
-                        <p class="card-text" style="text-align: justify;">Talent Stationary BD is an online store that sells stationary products. I developed both the backend and frontend, implementing all the functionalities.</p>
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-dark float-right" data-bs-toggle="modal" data-bs-target="#exampleModal">View Details</button>
+    <!-- Core Resume Engine Split (Experience & Education Left, Skills Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left Structural Block: Experience & Education -->
+        <div class="lg:col-span-8 space-y-12" id="resume">
+            
+            <!-- Section: Work History -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 border-b-2 border-indigo-600 pb-2 mb-6 tracking-tight flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase text-indigo-600 text-sm"></i> Professional Experience
+                </h3>
+                <div class="relative border-l border-slate-200 pl-5 ml-2 space-y-8">
+                    <!-- Experience Node -->
+                    <div class="relative">
+                        <div class="absolute -left-[26px] top-1.5 bg-indigo-600 rounded-full w-3 h-3 ring-4 ring-white"></div>
+                        <div class="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center mb-1">
+                            <h4 class="text-base font-bold text-slate-900">Junior Developer</h4>
+                            <span class="text-xs font-semibold bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-full border border-indigo-100 mt-1 sm:mt-0">Jan 2023 - Present</span>
                         </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Talent Stationary BD Details</h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p style="text-align: justify;">This project is an online store specializing in stationary products. I was responsible for developing both the frontend and backend, ensuring a seamless user experience and implementing various functionalities.</p>
-                            <p>For more information, you can visit the <a href="https://talentstationerybd.com/" target="_blank">Talent Stationary BD website</a>.</p>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="assets/img/timesmhl.com_.png" class="card-img-top" alt="Times Multiare Hospital Limited">
-                    <div class="card-body">
-                        <h5 class="card-title">Times Multiare Hospital Limited</h5>
-                        <p class="card-text" style="text-align: justify;">
-                            For TMHL developed the hospital management software.I developed backend functionalities for patient appointments, inpatient management,diagnostic test reports,prescriptions,Electronic Health Records...
+                        <p class="text-sm font-medium text-slate-700 mb-2">Bintel Corporation <span class="text-slate-400 font-normal">| Sister concern of Royal Scientific Publications</span></p>
+                        <p class="text-xs text-slate-500 leading-relaxed text-justify mb-2">
+                            Assisting in core platform architecture pipelines, integrating clean relational modeling metrics, and driving production deployments. Enhanced reliability metrics and backend-to-frontend UI data deliveries.
                         </p>
-
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-dark float-right" data-bs-toggle="modal" data-bs-target="#tmhlModal">View Details</button>
-                        </div>
-
+                        <a href="https://bintelbd.com" target="_blank" class="inline-flex items-center text-xs text-indigo-600 hover:underline gap-1"><i class="fa-solid fa-link text-[10px]"></i> bintelbd.com</a>
                     </div>
                 </div>
             </div>
 
-            <!-- times Modal -->
-            <div class="modal fade" id="tmhlModal" tabindex="-1" role="dialog" aria-labelledby="tmhlModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="tmhlModalLabel">Times Multiare Hospital Limited Details</h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p >Times Multiare Hospital Limited is a robust hospital management software where I focused on developing the backend functionalities:</p>
-                            <ul>
-                                <li>Patient appointment scheduling</li>
-                                <li>Inpatient management</li>
-                                <li>Diagnostic test report generation</li>
-                                <li>Prescription writing</li>
-                                <li>Electronic Health Records (EHR)</li>
-                                <li>Hospital accounts management</li>
-                                <li>Employee management</li>
-                            </ul>
-                            <p>If you need more specific information or have any questions, feel free to ask!</p>
-                            <p>You can also visit the <a href="https://timesmhl.com/" target="_blank">Times Multiare Hospital Limited website</a> for more details.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card">
-                    <img src="assets/img/bdbooks.net.png" class="card-img-top" alt="BDBooks">
-                    <div class="card-body">
-                        <h5 class="card-title">BDBooks</h5>
-                        <p class="card-text" style="text-align: justify;">BDBooks is an online bookstore where I worked on integrating backend data with the frontend. I facilitated the display of data on the frontend and implemented various functionalities for user interaction.</p>
-                        <div class="d-flex justify-content-end">
-
-                            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bdBooksModal">View Details</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- bdbooks Modal -->
-            <div class="modal fade" id="bdBooksModal" tabindex="-1" role="dialog" aria-labelledby="bdBooksModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="bdBooksModalLabel">BDBooks Details</h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>BDBooks is an online bookstore where I primarily focused on:</p>
-                            <ul>
-                                <li>Integrating backend data with the frontend</li>
-                                <li>Facilitating data display on the frontend</li>
-                                <li>Implementing various functionalities for user interaction</li>
-                            </ul>
-                            <p>If you'd like more detailed information or have specific questions, feel free to ask!</p>
-                            <p>You can also visit the <a href="https://bdbooks.net" target="_blank">BDBooks website</a> to explore further.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills" class="py-5 bg-light">
-
-    <div class="container">
-
-        <div class="text-center">
-            <h2 class="display-4">Skills</h2>
-        </div>
-
-        <div class="row">
-            <!-- Technical Skills Column -->
-            <div class="col-md-8">
-                <h3 class="text-primary">Technical  Skills</h3>
-                <div class="row">
-                    <!-- HTML5 Skill Card -->
-                    <div class="col-6 col-md-3  col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-html5 skill-icon html5-icon"></i>
-                            <div class="skill-title">HTML5</div>
-                        </div>
-                    </div>
-                    <!-- CSS3 Skill Card -->
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-css3 skill-icon css3-icon"></i>
-                            <div class="skill-title">CSS3</div>
-                        </div>
-                    </div>
-
-
-                    <!-- Bootstrap Skill Card -->
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-bootstrap skill-icon bootstrap-icon"></i>
-                            <div class="skill-title">Bootstrap</div>
-                        </div>
-                    </div>
-
-                    <!-- JavaScript Skill Card -->
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-js skill-icon js-icon"></i>
-                            <div class="skill-title">JavaScript</div>
-                        </div>
-                    </div>
-                    <!-- jQuery Skill Card -->
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-js-square skill-icon jquery-icon"></i>
-                            <div class="skill-title">jQuery</div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-vuejs skill-icon vuejs-icon"></i>
-                            <div class="skill-title">Vue.js</div>
-                        </div>
-                    </div>
-
-
-                    <!-- PHP Skill Card -->
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-php skill-icon php-icon"></i>
-                            <div class="skill-title">PHP</div>
-                        </div>
-                    </div>
-                    <!-- Laravel Skill Card -->
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-laravel skill-icon laravel-icon"></i>
-                            <div class="skill-title">Laravel</div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-git-alt skill-icon git-icon"></i>
-                            <div class="skill-title">Git</div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fab fa-github skill-icon github-icon"></i>
-                            <div class="skill-title"> GitHub</div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fas fa-database skill-icon mysql-icon"></i>
-                            <div class="skill-title">MySQL</div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-md-3 col-sm-4">
-                        <div class="skill-card">
-                            <i class="fas fa-project-diagram skill-icon mvc-icon"></i>
-                            <div class="skill-title">MVC Archi.</div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-            <!-- Soft Skills Column -->
-            <div class="col-md-4  px-5">
-                <h3 class="text-primary ">Soft Skills</h3>
-
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-check"></i> Problem Solving</li>
-                    <li><i class="fas fa-check"></i> Team Collaboration</li>
-                    <li><i class="fas fa-check"></i> Communication</li>
-                    <li><i class="fas fa-check"></i> Time Management</li>
-                    <li><i class="fas fa-check"></i> Critical Thinking</li>
-                    <li><i class="fas fa-check"></i> Adaptability</li>
-                    <li><i class="fas fa-check"></i> Attention to Detail</li>
-                    <li><i class="fas fa-check"></i> Creativity</li>
-                    <li><i class="fas fa-check"></i> Open-mindedness</li>
-                    <li><i class="fas fa-check"></i> Patience</li>
-                    <li><i class="fas fa-check"></i> Continuous Learning</li>
-                    <li><i class="fas fa-check"></i> Problem Sensitivity</li>
-                    <li><i class="fas fa-check"></i> Self-Motivation</li>
-                    <li><i class="fas fa-check"></i> Empathy</li>
-                </ul>
-
-
-            </div>
-        </div>
-    </div>
-
-
-</section>
-
-<!-- Resume Section -->
-<section id="resume" class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="display-4">Resume</h2>
-            <p class="lead">Here's a summary of my education and work experience.</p>
-        </div>
-
-
-        <div class="row">
-            <!-- Education Column -->
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-header bg-dark text-light">
-                        <h3 class="card-title">Education</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="accordion" id="educationAccordion">
-                            <!-- University Dropdown -->
-                            <div class="accordion-item border-bottom">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#uniCollapse" aria-expanded="true" aria-controls="uniCollapse">
-                                        <i class="fas fa-graduation-cap"></i>&nbsp; University
-                                    </button>
-                                </h2>
-                                <div id="uniCollapse" class="accordion-collapse collapse show" aria-labelledby="uniHeading" data-bs-parent="#educationAccordion">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Bachelor of Science in Computer Science & Engineering - City University, Bangladesh</li>
-                                            <li>Completed in 2022</li>
-                                            <li>CGPA: 3.57/4</li>
-                                        </ul>
-                                    </div>
-                                </div>
+            <!-- Section: Education History -->
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 border-b-2 border-indigo-600 pb-2 mb-6 tracking-tight flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-indigo-600 text-sm"></i> Academic Timeline
+                </h3>
+                <div class="space-y-6">
+                    <!-- Degree Entry -->
+                    <div class="flex gap-4">
+                        <div class="text-indigo-600 mt-1"><i class="fa-solid fa-certificate text-sm"></i></div>
+                        <div class="flex-1 flex flex-col sm:flex-row sm:justify-between items-start">
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">B.Sc. in Computer Science & Engineering</h4>
+                                <p class="text-sm text-slate-600">City University, Bangladesh</p>
+                                <p class="text-xs text-slate-500 font-medium mt-0.5">CGPA: 3.57 / 4.00</p>
                             </div>
-                            <!-- College Dropdown -->
-                            <div class="accordion-item border-bottom">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collegeCollapse" aria-expanded="false" aria-controls="collegeCollapse">
-                                        <i class="fas fa-university "></i>  &nbsp;College
-                                    </button>
-                                </h2>
-                                <div id="collegeCollapse" class="accordion-collapse collapse" aria-labelledby="collegeHeading" data-bs-parent="#educationAccordion">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Brahmanbaria Govt. College</li>
-                                            <li>Completed in 2016</li>
-                                            <li>GPA: 4.67/5.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <span class="text-xs font-medium text-slate-500 mt-1 sm:mt-0">Graduated 2022</span>
+                        </div>
+                    </div>
+
+                    <!-- Degree Entry 2 -->
+                    <div class="flex gap-4">
+                        <div class="text-indigo-600 mt-1"><i class="fa-solid fa-certificate text-sm"></i></div>
+                        <div class="flex-1 flex flex-col sm:flex-row sm:justify-between items-start">
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Higher Secondary School Certificate</h4>
+                                <p class="text-sm text-slate-600">Brahmanbaria Govt. College</p>
+                                <p class="text-xs text-slate-500 font-medium mt-0.5">GPA: 4.67 / 5.00</p>
                             </div>
-                            <!-- High School Dropdown -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#highSchoolCollapse" aria-expanded="false" aria-controls="highSchoolCollapse">
-                                        <i class="fas fa-school"></i>&nbsp; High School
-                                    </button>
-                                </h2>
-                                <div id="highSchoolCollapse" class="accordion-collapse collapse" aria-labelledby="highSchoolHeading" data-bs-parent="#educationAccordion">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>High School - Lalpur S.K. Das Chowdhury High School</li>
-                                            <li>Completed in 2014</li>
-                                            <li>GPA: 5.00/5.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <span class="text-xs font-medium text-slate-500 mt-1 sm:mt-0">Completed 2016</span>
+                        </div>
+                    </div>
+
+                    <!-- Degree Entry 3 -->
+                    <div class="flex gap-4">
+                        <div class="text-indigo-600 mt-1"><i class="fa-solid fa-certificate text-sm"></i></div>
+                        <div class="flex-1 flex flex-col sm:flex-row sm:justify-between items-start">
+                            <div>
+                                <h4 class="text-base font-bold text-slate-900">Secondary School Certificate</h4>
+                                <p class="text-sm text-slate-600">Lalpur S.K. Das Chowdhury High School</p>
+                                <p class="text-xs text-slate-500 font-medium mt-0.5">GPA: 5.00 / 5.00</p>
                             </div>
+                            <span class="text-xs font-medium text-slate-500 mt-1 sm:mt-0">Completed 2014</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-            <!-- Work Experience Column -->
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-header bg-dark text-light">
-                        <h3 class="card-title">Work Experience</h3>
-                    </div>
-
-
-                    <div class="card-body">
-                        <div class="card-text">
-                            <h4> <i class="fas fa-laptop-code"></i>&nbsp;Junior Developer at Bintel Corporation</h4>
-                            <p>Bintel Corporation, a sister concern of The Royal Scientific Publications</p>
-                            <p>Worked from January 1st, 2023</p>
-                            <p>Company Website: <a href="https://bintelbd.com" target="_blank">bintelbd.com</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 
         </div>
-    </div>
-</section>
 
-
-
-<!-- Blog Section -->
-<section id="blog" class="py-5">
-    <div class="container">
-
-        <div class="text-center">
-            <h2 class="display-4">Blog</h2>
-            <p class="lead">Check out my latest blog posts and articles on programming and technology.</p>
-        </div>
-
-
-        <div class="row">
-            <!-- Example Blog Post 1 -->
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="assets/img/vesion.jpeg" class="card-img-top" alt="Blog Post Image" style="height:200px;">
-                    <div class="card-body">
-                        <h4 class="card-title">Understanding Version Control Systems</h4>
-                        <p class="card-text" style="text-align: justify;">Version control systems are essential tools for managing code changes, collaboration, and project history...</p>
-                        <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#versionControlModal">Read More</a>
-                    </div>
+        <!-- Right Structural Block: Matrixed Skills Matrix Grid -->
+        <div class="lg:col-span-4 space-y-10" id="skills">
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 border-b-2 border-indigo-600 pb-2 mb-6 tracking-tight flex items-center gap-2">
+                    <i class="fa-solid fa-code text-indigo-600 text-sm"></i> Engineering Core
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-brands fa-laravel text-red-500"></i> Laravel</span>
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-brands fa-php text-indigo-500"></i> PHP</span>
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-solid fa-database text-blue-600"></i> MySQL</span>
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-brands fa-js text-yellow-500"></i> JavaScript</span>
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-brands fa-vuejs text-emerald-500"></i> Vue.js</span>
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-brands fa-git-alt text-orange-600"></i> Git & GitHub</span>
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-solid fa-sitemap text-slate-500"></i> MVC Architecture</span>
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-brands fa-html5 text-orange-500"></i> HTML5 / CSS3</span>
+                    <span class="text-xs font-medium px-3 py-1.5 bg-white border border-slate-200 rounded-md text-slate-700 shadow-xs flex items-center gap-1.5"><i class="fa-brands fa-bootstrap text-purple-600"></i> Bootstrap</span>
                 </div>
             </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="versionControlModal" tabindex="-1" aria-labelledby="versionControlModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="versionControlModalLabel">Understanding Version Control Systems</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Version control systems (VCS) are software tools that help manage changes to code, documents, and other files...</p>
-                            <p>They allow multiple developers to collaborate on a project, keeping track of all modifications made over time...</p>
-                            <p>Some popular version control systems include Git, Subversion (SVN), Mercurial, and more...</p>
-                            <p>Benefits of using version control systems include:</p>
-                            <ul>
-                                <li>Tracking changes and maintaining a history of revisions</li>
-                                <li>Facilitating collaboration among team members</li>
-                                <li>Rolling back to previous versions if needed</li>
-                                <li>Branching and merging for parallel development</li>
-                            </ul>
-                            <p>Whether working on a solo project or in a team, understanding version control systems is crucial for efficient and organized development.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+            <div>
+                <h3 class="text-xl font-bold text-slate-900 border-b-2 border-indigo-600 pb-2 mb-6 tracking-tight flex items-center gap-2">
+                    <i class="fa-solid fa-user-gear text-indigo-600 text-sm"></i> Professional Traits
+                </h3>
+                <div class="grid grid-cols-1 gap-2 text-xs font-medium text-slate-600">
+                    <div class="flex items-center gap-2 bg-slate-100/60 p-2 rounded border border-slate-200/50"><i class="fa-solid fa-circle-check text-indigo-600 text-[10px]"></i> Problem Solving</div>
+                    <div class="flex items-center gap-2 bg-slate-100/60 p-2 rounded border border-slate-200/50"><i class="fa-solid fa-circle-check text-indigo-600 text-[10px]"></i> Team Collaboration</div>
+                    <div class="flex items-center gap-2 bg-slate-100/60 p-2 rounded border border-slate-200/50"><i class="fa-solid fa-circle-check text-indigo-600 text-[10px]"></i> Critical Logic Architecture</div>
+                    <div class="flex items-center gap-2 bg-slate-100/60 p-2 rounded border border-slate-200/50"><i class="fa-solid fa-circle-check text-indigo-600 text-[10px]"></i> System Optimization Focus</div>
                 </div>
             </div>
-
-
-            <!-- Example Blog Post 2 -->
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="assets/img/js-framework.png" class="card-img-top" alt="Blog Post Image" style="height:200px;">
-                    <div class="card-body">
-                        <h4 class="card-title">Importance of JavaScript in Frontend</h4>
-                        <p class="card-text" style="text-align: justify;">JavaScript is a crucial part of modern frontend development. It enables dynamic and interactive web experiences by allowing</p>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal"  data-bs-target="#jsModal">Read More</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal fade" id="jsModal" tabindex="-1" role="dialog" aria-labelledby="jsModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="jsModalLabel">Importance of JavaScript in Frontend Development</h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>JavaScript plays a vital role in creating dynamic and responsive web applications. Its capabilities include:</p>
-                            <ul>
-                                <li>Manipulating HTML and CSS to dynamically update content</li>
-                                <li>Handling user events and interactions</li>
-                                <li>Asynchronous communication with servers (AJAX)</li>
-                                <li>Creating animations and effects</li>
-                                <li>Building complex frontend frameworks like React, Angular, or Vue</li>
-                            </ul>
-                            <p>Understanding JavaScript fundamentals is essential for anyone aiming to become a proficient frontend developer.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Example Blog Post 3 -->
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="assets/img/framework-laravel.png" class="card-img-top" alt="Blog Post Image" style="height:200px;">
-                    <div class="card-body">
-                        <h4 class="card-title">The Power of Laravel: A Full-Stack Developer's Gem
-                        </h4>
-                        <p class="card-text" style="text-align: justify;">Laravel is a gem for modern full-stack developers, offering elegance and efficiency in backend and frontend development.</p>
-                        <button type="button" class="btn btn-dark read-more-btn" data-bs-toggle="modal" data-bs-target="#laravelModal">Read More</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal fade" id="laravelModal" tabindex="-1" role="dialog" aria-labelledby="laravelModalLabel" aria-hidden="true">
-                <div class="modal-dialog  modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="laravelModalLabel">The Power of Laravel: A Full-Stack Developer's Gem</h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <div class="modal-body " style="text-align: justify;">
-                            <p>
-                                In the realm of web development, Laravel stands as a testament to the evolution of PHP frameworks. Its elegant syntax and robust features make it an ideal choice for modern full-stack developers.
-                            </p>
-
-                            <h6 class="fw-bold">Backend Excellence with Laravel</h6>
-                            <p>
-                                Laravel simplifies backend development with its expressive syntax and adherence to the Model-View-Controller (MVC) architecture. With features like Eloquent ORM and Blade Templating Engine, managing databases and creating dynamic views becomes effortless.
-                            </p>
-
-                            <h6 class="fw-bold">Seamless Frontend Integration</h6>
-                            <p>
-                                While excelling in backend capabilities, Laravel seamlessly integrates with frontend technologies. Its ability to create robust APIs and leverage tools like Laravel Mix empowers developers to build captivating user interfaces.
-                            </p>
-
-                            <h6 class="fw-bold">Community and Ecosystem</h6>
-                            <p>
-                                One of Laravel's greatest strengths lies in its vibrant community. With Laracasts, forums, and a plethora of packages available through Composer, developers find ample resources and solutions for their projects.
-                            </p>
-
-                            <h6 class="fw-bold">Conclusion: Laravel's Role in Full-Stack Mastery</h6>
-                            <p>
-                                Laravel isn't just a framework; it's a comprehensive toolkit that fosters productivity and creativity in full-stack development. Its blend of powerful backend functionalities and seamless frontend integration makes it a cornerstone for modern web applications.
-                            </p>
-
-                            <p>
-                                Aspiring full-stack developers should undoubtedly explore the prowess of Laravel to elevate their skill set and projects. Laravel stands tall as a testament to the evolution of PHP frameworks, embodying elegance, functionality, and a community-driven spirit that propels the realm of full-stack development forward.
-                            </p>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Add more blog posts as needed -->
-    </div>
-</section>
-
-
-<!-- Testimonials Section -->
-<!--<section id="testimonials" class="py-5">-->
-<!--    <div class="container">-->
-
-<!--        <div class="text-center">-->
-<!--            <h2 class="display-4">Testimonials</h2>-->
-<!--            <p class="lead">What others say about working with me.</p>-->
-<!--        </div>-->
-
-
-
-<!--        &lt;!&ndash; Testimonials Carousel &ndash;&gt;-->
-<!--        <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">-->
-<!--            &lt;!&ndash; Carousel Indicators &ndash;&gt;-->
-<!--            <ol class="carousel-indicators">-->
-<!--                <li   data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active"></li>-->
-<!--                <li data-bs-target="#testimonialsCarousel" data-bs-slide-to="1"></li>-->
-<!--                &lt;!&ndash; Add more indicators as needed &ndash;&gt;-->
-<!--            </ol>-->
-
-<!--            <div class="carousel-inner">-->
-<!--                &lt;!&ndash; Testimonial 1 &ndash;&gt;-->
-<!--                <div class="carousel-item active">-->
-<!--                    <div class="testimonial">-->
-<!--                        <h3>Title 1</h3>-->
-<!--                        <p>"Jalal is an exceptional developer with a keen eye for detail. His work is top-notch, and he's a pleasure-->
-<!--                            to work with."</p>-->
-<!--                        <p class="author">- John Doe, CEO of ABC Company</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                &lt;!&ndash; Testimonial 2 &ndash;&gt;-->
-<!--                <div class="carousel-item">-->
-<!--                    <div class="testimonial">-->
-<!--                        <h3>Title 2</h3>-->
-<!--                        <p>"Working with Jalal was a great experience. He delivered high-quality solutions on time and exceeded our expectations."</p>-->
-<!--                        <p class="author">- Jane Smith, CTO of XYZ Corporation</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            &lt;!&ndash; Carousel Controls &ndash;&gt;-->
-<!--            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">-->
-<!--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--                <span class="visually-hidden">Previous</span>-->
-<!--            </button>-->
-<!--            <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">-->
-<!--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--                <span class="visually-hidden">Next</span>-->
-<!--            </button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-
-
-<!-- Contact Section -->
-<section id="contact" class="py-5  ">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="display-4 mb-5">Get in Touch</h2>
-        </div>
-        <div class="row">
-            <!-- Contact Form -->
-            <div class=" col-md-7">
-                <div class="mb-4">
-                    <h3 class="mb-4">Drop Me a Line</h3>
-
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Your Phone</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Your Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Your Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-dark fw-bold">Submit</button>
-                    </form>
-
-                </div>
-            </div>
-
-
-            <!-- Contact Info -->
-            <!-- Contact Info -->
-            <div class="col-md-5">
-                <div class="mb-4">
-                    <h3 class="mb-4">Contact Info</h3>
-                    <p><i class="fas fa-phone me-2"></i> Phone:+8801780249916</p>
-                    <p><i class="fas fa-envelope me-2"></i> Email: jalalmiah1618@gmail.com</p>
-                    <p><i class="fas fa-map-marker me-2"></i> Address: Dhaka, Bangladesh</p>
-                </div>
-            </div>
-
-
         </div>
     </div>
-</section>
 
-<!-- Footer Section -->
-<footer class="bg-dark text-white py-3">
-    <div class="container text-center">
-        <!-- Social Icons -->
-        <ul class="social-icons list-inline mb-0">
-            <li class="list-inline-item">
-                <a href="https://www.facebook.com/profile.php?id=100008106167371" target="_blank" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            </li>
-            <!-- Add this list item for WhatsApp -->
-            <li class="list-inline-item">
-                <a href="https://wa.me/+8801780249916" target="_blank" title="WhatsApp" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/jalal-miah-526599174" target="_blank" title="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://github.com/jalal550" target="_blank" title="GitHub" class="social-icon"><i class="fab fa-github"></i></a>
-            </li>
-            <!-- Add more social icons as needed -->
-        </ul>
+    <!-- Section: Selected Case Studies / Portfolio Works -->
+    <section id="portfolio" class="pt-6">
+        <h3 class="text-xl font-bold text-slate-900 border-b-2 border-indigo-600 pb-2 mb-8 tracking-tight flex items-center gap-2">
+            <i class="fa-solid fa-folder-open text-indigo-600 text-sm"></i> Selected Production Projects
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project 1: TVISA -->
+            <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition duration-300">
+                <div class="space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-base font-bold text-slate-900">TVISA</h4>
+                        <span class="text-[10px] uppercase tracking-wider font-semibold bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-100">Live Platform</span>
+                    </div>
+                    <p class="text-xs text-slate-600 text-justify leading-relaxed">
+                        A specialized international visa and immigration assistance consultation framework tailored for global tracking. Engineered highly accessible application pipelines and data-driven client journey mapping protocols.
+                    </p>
+                </div>
+                <div class="pt-4 flex justify-end">
+                    <button onclick="toggleModal('tvisaModal')" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">Details & Source <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                </div>
+            </div>
 
-        <!-- Copyright Notice -->
-        <p class="mt-4 text-center">© 2023 Jalal Miah. All rights reserved. | Designed by Jalal Miah</p>
+            <!-- Project 2: Shutki Ghor Lalpur -->
+            <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition duration-300">
+                <div class="space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-base font-bold text-slate-900">Shutki Ghor Lalpur</h4>
+                        <span class="text-[10px] uppercase tracking-wider font-semibold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-100">Live E-Com</span>
+                    </div>
+                    <p class="text-xs text-slate-600 text-justify leading-relaxed">
+                        An authentic dynamic web marketplace infrastructure dedicated to traditional dry fish trade. Developed robust custom catalog mapping, order processing streams, and direct localized user journey solutions.
+                    </p>
+                </div>
+                <div class="pt-4 flex justify-end">
+                    <button onclick="toggleModal('shutkiModal')" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">Details & Source <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                </div>
+            </div>
+
+            <!-- Project 3: Times Multiare Hospital -->
+            <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition duration-300">
+                <div class="space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-base font-bold text-slate-900">Times Multiare Hospital</h4>
+                        <span class="text-[10px] uppercase tracking-wider font-semibold bg-slate-100 px-2 py-0.5 rounded text-slate-600">SaaS / ERP</span>
+                    </div>
+                    <p class="text-xs text-slate-600 text-justify leading-relaxed">
+                        Enterprise software architecture running diagnostics engines, patient indexing, custom EMR files tracking schemas, and automated clinical prescriptions handlers.
+                    </p>
+                </div>
+                <div class="pt-4 flex justify-end">
+                    <button onclick="toggleModal('tmhlModal')" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">Details & Source <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                </div>
+            </div>
+
+            <!-- Project 4: Talent Stationary BD -->
+            <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition duration-300">
+                <div class="space-y-3">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-base font-bold text-slate-900">Talent Stationary BD</h4>
+                        <span class="text-[10px] uppercase tracking-wider font-semibold bg-slate-100 px-2 py-0.5 rounded text-slate-600">E-Com</span>
+                    </div>
+                    <p class="text-xs text-slate-600 text-justify leading-relaxed">
+                        Full stack online store solution tailored for stationery distribution. Engineered robust transactional modules and inventory management workflows.
+                    </p>
+                </div>
+                <div class="pt-4 flex justify-end">
+                    <button onclick="toggleModal('exampleModal')" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">Details & Source <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Technical Writing & Articles -->
+    <section id="blog" class="pt-6">
+        <h3 class="text-xl font-bold text-slate-900 border-b-2 border-indigo-600 pb-2 mb-8 tracking-tight flex items-center gap-2">
+            <i class="fa-solid fa-newspaper text-indigo-600 text-sm"></i> Technical Publications
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Article 1 -->
+            <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition duration-300 flex flex-col justify-between">
+                <div class="p-5 space-y-3">
+                    <h4 class="text-base font-bold text-slate-900 hover:text-indigo-600 transition duration-150"><button onclick="toggleModal('versionControlModal')">Understanding Version Control Systems</button></h4>
+                    <p class="text-xs text-slate-500 line-clamp-3 text-justify">Version control systems are essential tools for managing code changes, collaboration pipelines, and tracking enterprise project metrics history across team scopes...</p>
+                </div>
+                <div class="px-5 pb-5 pt-2">
+                    <button onclick="toggleModal('versionControlModal')" class="text-xs font-medium text-slate-600 hover:text-indigo-600 flex items-center gap-1">Review Briefing <i class="fa-solid fa-chevron-right text-[9px]"></i></button>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition duration-300 flex flex-col justify-between">
+                <div class="p-5 space-y-3">
+                    <h4 class="text-base font-bold text-slate-900 hover:text-indigo-600 transition duration-150"><button onclick="toggleModal('jsModal')">Importance of JavaScript in Frontend</button></h4>
+                    <p class="text-xs text-slate-500 line-clamp-3 text-justify">Exploring synchronous runtime patterns, AJAX async execution context paradigms, and engine operations inside current rendering scopes...</p>
+                </div>
+                <div class="px-5 pb-5 pt-2">
+                    <button onclick="toggleModal('jsModal')" class="text-xs font-medium text-slate-600 hover:text-indigo-600 flex items-center gap-1">Review Briefing <i class="fa-solid fa-chevron-right text-[9px]"></i></button>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition duration-300 flex flex-col justify-between">
+                <div class="p-5 space-y-3">
+                    <h4 class="text-base font-bold text-slate-900 hover:text-indigo-600 transition duration-150"><button onclick="toggleModal('laravelModal')">The Power of Laravel Framework</button></h4>
+                    <p class="text-xs text-slate-500 line-clamp-3 text-justify">An evaluation of standard routing components, secure Eloquent data model handling, caching drivers, and the ease of working with full-stack MVC dependencies...</p>
+                </div>
+                <div class="px-5 pb-5 pt-2">
+                    <button onclick="toggleModal('laravelModal')" class="text-xs font-medium text-slate-600 hover:text-indigo-600 flex items-center gap-1">Review Briefing <i class="fa-solid fa-chevron-right text-[9px]"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Modals Container System Layer -->
+<!-- Project Modal: TVISA -->
+<div id="tvisaModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-md w-full overflow-hidden border border-slate-200">
+        <div class="flex justify-between items-center p-5 border-b border-slate-100">
+            <h5 class="font-bold text-slate-900 text-base">TVISA Portal Details</h5>
+            <button onclick="toggleModal('tvisaModal')" class="text-slate-400 hover:text-slate-600 text-xl font-medium">&times;</button>
+        </div>
+        <div class="p-6 text-sm text-slate-600 space-y-3 text-justify">
+            <p>TVISA is an elite digital gateway offering streamlined consulting and documentation structures for cross-border immigration requirements.</p>
+            <p>I contributed to implementing accessible structural client pathways, normalizing dynamic informational databases, and ensuring smooth interface execution guidelines.</p>
+            <p>Review the production environment directly: <a href="https://tvisa.co.uk/" target="_blank" class="text-indigo-600 font-medium hover:underline">tvisa.co.uk</a>.</p>
+        </div>
+        <div class="flex justify-end p-4 border-t border-slate-100 bg-slate-50">
+            <button onclick="toggleModal('tvisaModal')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-semibold shadow-xs">Close</button>
+        </div>
     </div>
-</footer>
+</div>
 
+<!-- Project Modal: Shutki Ghor Lalpur -->
+<div id="shutkiModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-md w-full overflow-hidden border border-slate-200">
+        <div class="flex justify-between items-center p-5 border-b border-slate-100">
+            <h5 class="font-bold text-slate-900 text-base">Shutki Ghor Lalpur</h5>
+            <button onclick="toggleModal('shutkiModal')" class="text-slate-400 hover:text-slate-600 text-xl font-medium">&times;</button>
+        </div>
+        <div class="p-6 text-sm text-slate-600 space-y-3 text-justify">
+            <p>Shutki Ghor Lalpur is a dedicated e-commerce platform designed for handling traditional business operations smoothly on the digital spectrum.</p>
+            <p>I structured clean backend pathways to handle item configurations, filterable search listings, dynamic cart workflows, and interactive order placements.</p>
+            <p>For live code metrics or exploration, visit the official production branch directly: <a href="https://www.shutkighorlalpur.com/" target="_blank" class="text-indigo-600 font-medium hover:underline">shutkighorlalpur.com</a>.</p>
+        </div>
+        <div class="flex justify-end p-4 border-t border-slate-100 bg-slate-50">
+            <button onclick="toggleModal('shutkiModal')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-semibold shadow-xs">Close</button>
+        </div>
+    </div>
+</div>
 
+<!-- Project Modal 1 -->
+<div id="exampleModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-md w-full overflow-hidden border border-slate-200">
+        <div class="flex justify-between items-center p-5 border-b border-slate-100">
+            <h5 class="font-bold text-slate-900 text-base">Talent Stationary BD Details</h5>
+            <button onclick="toggleModal('exampleModal')" class="text-slate-400 hover:text-slate-600 text-xl font-medium">&times;</button>
+        </div>
+        <div class="p-6 text-sm text-slate-600 space-y-3 text-justify">
+            <p>This project is an online store specializing in stationary products. I was responsible for developing both the frontend and backend, ensuring a seamless user experience and implementing various functionalities.</p>
+            <p>For more information, you can visit the <a href="https://talentstationerybd.com/" target="_blank" class="text-indigo-600 font-medium hover:underline">Talent Stationary BD website</a>.</p>
+        </div>
+        <div class="flex justify-end p-4 border-t border-slate-100 bg-slate-50">
+            <button onclick="toggleModal('exampleModal')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-semibold shadow-xs">Close</button>
+        </div>
+    </div>
+</div>
 
+<!-- Project Modal 2 -->
+<div id="tmhlModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-md w-full overflow-hidden border border-slate-200">
+        <div class="flex justify-between items-center p-5 border-b border-slate-100">
+            <h5 class="font-bold text-slate-900 text-base">Times Multiare Hospital Limited</h5>
+            <button onclick="toggleModal('tmhlModal')" class="text-slate-400 hover:text-slate-600 text-xl font-medium">&times;</button>
+        </div>
+        <div class="p-6 text-sm text-slate-600 space-y-3">
+            <p class="text-justify">Times Multiare Hospital Limited is a robust hospital management software where I focused on developing the backend functionalities:</p>
+            <ul class="list-disc pl-5 space-y-1 text-xs text-slate-500">
+                <li>Patient appointment scheduling</li>
+                <li>Inpatient management</li>
+                <li>Diagnostic test report generation</li>
+                <li>Prescription writing</li>
+                <li>Electronic Health Records (EHR)</li>
+                <li>Hospital accounts management</li>
+                <li>Employee management</li>
+            </ul>
+            <p>Visit the <a href="https://timesmhl.com/" target="_blank" class="text-indigo-600 font-medium hover:underline">Times Multiare Hospital website</a>.</p>
+        </div>
+        <div class="flex justify-end p-4 border-t border-slate-100 bg-slate-50">
+            <button onclick="toggleModal('tmhlModal')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-semibold shadow-xs">Close</button>
+        </div>
+    </div>
+</div>
 
-<!-- Bootstrap JS (optional, only if you need it for certain components) -->
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+<!-- Blog Modal 1 -->
+<div id="versionControlModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-xl w-full overflow-hidden border border-slate-200">
+        <div class="flex justify-between items-center p-5 border-b border-slate-100">
+            <h5 class="font-bold text-slate-900 text-base">Understanding Version Control Systems</h5>
+            <button onclick="toggleModal('versionControlModal')" class="text-slate-400 hover:text-slate-600 text-xl font-medium">&times;</button>
+        </div>
+        <div class="p-6 text-sm text-slate-600 space-y-3 text-justify max-h-[60vh] overflow-y-auto">
+            <p>Version control systems (VCS) are software tools that help manage changes to code, documents, and other files over time.</p>
+            <p>They allow multiple developers to collaborate on a unified framework codebase, tracking every alteration and providing fallback structural safe points if deployment bugs surface.</p>
+            <p class="font-semibold text-slate-800">Key Benefits:</p>
+            <ul class="list-disc pl-5 space-y-1 text-xs">
+                <li>Tracking changes and maintaining revision histories.</li>
+                <li>Seamless engineering branch workflows.</li>
+                <li>Parallel team merges and patch deployments.</li>
+            </ul>
+        </div>
+        <div class="flex justify-end p-4 border-t border-slate-100 bg-slate-50">
+            <button onclick="toggleModal('versionControlModal')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-semibold shadow-xs">Close</button>
+        </div>
+    </div>
+</div>
 
+<!-- Blog Modal 2 -->
+<div id="jsModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-lg w-full overflow-hidden border border-slate-200">
+        <div class="flex justify-between items-center p-5 border-b border-slate-100">
+            <h5 class="font-bold text-slate-900 text-base">Importance of JavaScript in Frontend</h5>
+            <button onclick="toggleModal('jsModal')" class="text-slate-400 hover:text-slate-600 text-xl font-medium">&times;</button>
+        </div>
+        <div class="p-6 text-sm text-slate-600 space-y-3 text-justify">
+            <p>JavaScript plays a vital role in creating dynamic and responsive web applications. Modern web apps rely on its runtime for context changes, data mutations, async payload rendering via AJAX/Fetch API layers, and client state handling.</p>
+            <p>Mastering raw native JavaScript principles builds the prerequisite foundations required to efficiently run robust frameworks like Vue.js or React.</p>
+        </div>
+        <div class="flex justify-end p-4 border-t border-slate-100 bg-slate-50">
+            <button onclick="toggleModal('jsModal')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-semibold shadow-xs">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Modal 3 -->
+<div id="laravelModal" class="fixed inset-0 z-50 hidden bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-xl w-full overflow-hidden border border-slate-200">
+        <div class="flex justify-between items-center p-5 border-b border-slate-100">
+            <h5 class="font-bold text-slate-900 text-base">The Power of Laravel Architecture</h5>
+            <button onclick="toggleModal('laravelModal')" class="text-slate-400 hover:text-slate-600 text-xl font-medium">&times;</button>
+        </div>
+        <div class="p-6 text-sm text-slate-600 space-y-3 text-justify max-h-[60vh] overflow-y-auto">
+            <p>Laravel stands out as an elite backend system framework. By prioritizing elegant application architecture layers alongside deep database hydration features via Eloquent ORM, it shifts developers away from tedious boilerplate setup processes.</p>
+            <p>Its natural handling of queue drivers, absolute route safety configurations, cross-site script validation filters, and simple REST API controllers makes it a developer's favorite choice for secure server ecosystems.</p>
+        </div>
+        <div class="flex justify-end p-4 border-t border-slate-100 bg-slate-50">
+            <button onclick="toggleModal('laravelModal')" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-xs font-semibold shadow-xs">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript Engine Drivers -->
+<script>
+    // Responsive navigation behavior
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+    });
+
+    // Handle smooth dismissals when navigation link entries are targeted on mobile
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(!navMenu.classList.contains('hidden')) {
+                navMenu.classList.add('hidden');
+            }
+        });
+    });
+
+    // Dialog state controllers
+    function toggleModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if(modal) {
+            modal.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        }
+    }
+</script>
 </body>
-
 </html>
